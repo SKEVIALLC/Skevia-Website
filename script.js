@@ -23,26 +23,3 @@ if (footerYear) {
   footerYear.textContent = String(new Date().getFullYear());
 }
 
-const contactFormNext = document.querySelector("#contact-form-next");
-if (contactFormNext) {
-  try {
-    contactFormNext.value = new URL("contact.html?sent=1", window.location.href)
-      .href;
-  } catch {
-    contactFormNext.value = "contact.html?sent=1";
-  }
-}
-
-const params = new URLSearchParams(window.location.search);
-if (params.get("sent") === "1") {
-  const banner = document.querySelector("#contact-success");
-  if (banner) {
-    banner.hidden = false;
-    banner.classList.add("is-visible");
-  }
-  try {
-    window.history.replaceState({}, "", "contact.html");
-  } catch {
-    /* ignore */
-  }
-}

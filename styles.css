@@ -41,25 +41,56 @@ body {
   font-family: var(--body);
   font-size: 1.02rem;
   line-height: 1.65;
-  background:
-    radial-gradient(1200px 800px at 70% -10%, rgba(124, 58, 237, 0.18), transparent 60%),
-    radial-gradient(900px 700px at 10% 20%, rgba(52, 211, 153, 0.08), transparent 55%),
-    radial-gradient(900px 700px at 85% 110%, rgba(167, 139, 250, 0.12), transparent 55%),
-    linear-gradient(180deg, #0a0d14 0%, var(--bg) 45%, #04060b 100%);
+  background-color: #040608;
+  background-image:
+    radial-gradient(ellipse 130% 85% at 50% -30%, rgba(56, 189, 248, 0.12), transparent 55%),
+    radial-gradient(ellipse 50% 42% at 108% 88%, rgba(45, 212, 191, 0.08), transparent 58%),
+    radial-gradient(ellipse 38% 52% at -12% 48%, rgba(14, 116, 144, 0.07), transparent 56%),
+    linear-gradient(176deg, #0d1822 0%, #070b10 36%, #020407 100%);
   overflow-x: hidden;
 }
 
-/* Crisp “HD” background detail (vector tile; not blurry gradients). */
+/* Depth chart + sonar arcs (vector tile), slow parallax drift */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: -1;
+  opacity: 0.92;
+  background-image: url("bg-depth-tile.svg");
+  background-size: 520px 520px;
+  background-repeat: repeat;
+  animation: depth-drift 110s ease-in-out infinite;
+}
+
+/* Analog grain + soft vignette — breaks up flat gradients */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-image:
+    radial-gradient(ellipse 92% 88% at 50% 42%, transparent 35%, rgba(1, 4, 8, 0.72) 100%),
+    url("bg-noise.svg");
+  background-size:
+    auto,
+    220px 220px;
+  background-repeat: no-repeat, repeat;
+  mix-blend-mode: soft-light;
   opacity: 0.55;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none'%3E%3Cpath d='M0 32h320M0 64h320M0 96h320M0 128h320M0 160h320M0 192h320M0 224h320M0 256h320M0 288h320' stroke='%23ffffff' stroke-opacity='0.06'/%3E%3Cpath d='M32 0v320M64 0v320M96 0v320M128 0v320M160 0v320M192 0v320M224 0v320M256 0v320M288 0v320' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3Cpath d='M0 0h320v320H0z' stroke='%23a78bfa' stroke-opacity='0.06'/%3E%3Cpath d='M0 220L320 92' stroke='%2334d399' stroke-opacity='0.08'/%3E%3Cpath d='M0 252L320 124' stroke='%23a78bfa' stroke-opacity='0.06'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 320px 320px;
-  image-rendering: crisp-edges;
+}
+
+@keyframes depth-drift {
+  0%,
+  100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 56px 44px;
+  }
 }
 
 a {
@@ -1658,85 +1689,6 @@ select {
   border-color: rgba(232, 160, 144, 0.5);
 }
 
-.nexus-shop-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-  align-items: start;
-}
-
-.nexus-description {
-  background:
-    radial-gradient(circle at top left, rgba(122, 209, 191, 0.12), transparent 15rem),
-    linear-gradient(135deg, rgba(26, 64, 76, 0.88), rgba(12, 33, 40, 0.9)),
-    var(--surface);
-  border: 1px solid rgba(189, 231, 224, 0.16);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
-  padding: 1.8rem;
-}
-
-.nexus-description p {
-  margin: 0 0 1.2rem;
-  color: var(--muted);
-  line-height: 1.8;
-  font-size: 0.95rem;
-}
-
-.nexus-description p:last-child {
-  margin-bottom: 0;
-}
-
-.nexus-features {
-  background:
-    radial-gradient(circle at bottom right, rgba(255, 142, 114, 0.12), transparent 15rem),
-    linear-gradient(135deg, rgba(35, 52, 79, 0.88), rgba(16, 34, 46, 0.92)),
-    var(--surface);
-  border: 1px solid rgba(189, 231, 224, 0.16);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(16px);
-  padding: 1.8rem;
-}
-
-.nexus-features h3 {
-  margin: 0 0 1.2rem;
-  font-family: var(--display);
-  font-size: 1.24rem;
-  font-weight: 700;
-}
-
-.features-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.features-list li {
-  color: var(--muted);
-  line-height: 1.7;
-  font-size: 0.9rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.features-list li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.features-list strong {
-  color: var(--ink);
-  font-weight: 600;
-}
-
 .site-footer {
   display: flex;
   flex-wrap: wrap;
@@ -1917,8 +1869,7 @@ select {
 @media (max-width: 980px) {
   .hero,
   .product-grid,
-  .contact-cards,
-  .nexus-shop-content {
+  .contact-cards {
     grid-template-columns: 1fr;
   }
 

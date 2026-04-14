@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="520" height="520" viewBox="0 0 520 520">
+  <g fill="none" stroke-linecap="round">
+    <!-- Soft bathy contours  hand-placed, not a uniform grid -->
+    <path d="M-60 95 C 130 45 310 125 580 88" stroke="#7dd3fc" stroke-opacity="0.055" stroke-width="0.7"/>
+    <path d="M-60 175 C 95 125 355 205 580 158" stroke="#99f6e4" stroke-opacity="0.045" stroke-width="0.65"/>
+    <path d="M-60 255 C 155 210 325 285 580 232" stroke="#5eead4" stroke-opacity="0.04" stroke-width="0.65"/>
+    <path d="M-60 335 C 85 295 390 365 580 308" stroke="#94a3b8" stroke-opacity="0.038" stroke-width="0.6"/>
+    <path d="M-60 415 C 170 375 300 445 580 388" stroke="#7dd3fc" stroke-opacity="0.032" stroke-width="0.6"/>
+    <path d="M-60 55 C 200 20 380 75 580 42" stroke="#e0f2fe" stroke-opacity="0.028" stroke-width="0.55"/>
+    <!-- Sparse meridian scratches -->
+    <path d="M142 -40 L 88 560" stroke="#ffffff" stroke-opacity="0.02" stroke-width="0.5" stroke-dasharray="2 24 6 18"/>
+    <path d="M312 -40 L 258 560" stroke="#34d399" stroke-opacity="0.028" stroke-width="0.5" stroke-dasharray="3 28"/>
+    <path d="M-30 28 L 550 118" stroke="#ffffff" stroke-opacity="0.022" stroke-width="0.45" stroke-dasharray="1 20"/>
+    <!-- Wide arcs  chart / sonar echo, very faint -->
+    <circle cx="430" cy="70" r="248" stroke="#38bdf8" stroke-opacity="0.022" stroke-width="0.55" stroke-dasharray="1 11"/>
+    <circle cx="448" cy="92" r="332" stroke="#2dd4bf" stroke-opacity="0.018" stroke-width="0.5" stroke-dasharray="2 15"/>
+  </g>
+</svg>

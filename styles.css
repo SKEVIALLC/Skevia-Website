@@ -1,15 +1,15 @@
 :root {
-  --bg: #0a1218;
-  --surface: rgba(12, 28, 36, 0.72);
-  --surface-strong: rgba(10, 26, 34, 0.92);
-  --ink: #f0f7f5;
-  --muted: #9cb8b2;
-  --accent: #e8a090;
-  --accent-deep: #c75d48;
-  --moss: #6bc4b3;
-  --line: rgba(180, 220, 210, 0.12);
-  --shadow: 0 24px 64px rgba(2, 8, 12, 0.45);
-  --shadow-soft: 0 8px 32px rgba(2, 12, 18, 0.28);
+  --bg: #070a0f;
+  --surface: #0b0f17;
+  --surface-strong: #0a0d14;
+  --ink: #eef2ff;
+  --muted: rgba(238, 242, 255, 0.7);
+  --accent: #7c3aed;
+  --accent-deep: #a78bfa;
+  --moss: #34d399;
+  --line: rgba(238, 242, 255, 0.12);
+  --shadow: 0 22px 60px rgba(0, 0, 0, 0.55);
+  --shadow-soft: 0 10px 34px rgba(0, 0, 0, 0.32);
   --display: "Fraunces", serif;
   --body: "Space Grotesk", sans-serif;
   --mono: "IBM Plex Mono", monospace;
@@ -42,11 +42,24 @@ body {
   font-size: 1.02rem;
   line-height: 1.65;
   background:
-    radial-gradient(ellipse 90% 50% at 100% 0%, rgba(232, 160, 144, 0.14), transparent 55%),
-    radial-gradient(ellipse 70% 45% at 0% 30%, rgba(107, 196, 179, 0.1), transparent 50%),
-    radial-gradient(ellipse 80% 40% at 50% 100%, rgba(45, 95, 110, 0.12), transparent 45%),
-    linear-gradient(180deg, #0d1a22 0%, var(--bg) 38%, #060a0e 100%);
+    radial-gradient(1200px 800px at 70% -10%, rgba(124, 58, 237, 0.18), transparent 60%),
+    radial-gradient(900px 700px at 10% 20%, rgba(52, 211, 153, 0.08), transparent 55%),
+    radial-gradient(900px 700px at 85% 110%, rgba(167, 139, 250, 0.12), transparent 55%),
+    linear-gradient(180deg, #0a0d14 0%, var(--bg) 45%, #04060b 100%);
   overflow-x: hidden;
+}
+
+/* Crisp “HD” background detail (vector tile; not blurry gradients). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.55;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'%3E%3Cg fill='none'%3E%3Cpath d='M0 32h320M0 64h320M0 96h320M0 128h320M0 160h320M0 192h320M0 224h320M0 256h320M0 288h320' stroke='%23ffffff' stroke-opacity='0.06'/%3E%3Cpath d='M32 0v320M64 0v320M96 0v320M128 0v320M160 0v320M192 0v320M224 0v320M256 0v320M288 0v320' stroke='%23ffffff' stroke-opacity='0.05'/%3E%3Cpath d='M0 0h320v320H0z' stroke='%23a78bfa' stroke-opacity='0.06'/%3E%3Cpath d='M0 220L320 92' stroke='%2334d399' stroke-opacity='0.08'/%3E%3Cpath d='M0 252L320 124' stroke='%23a78bfa' stroke-opacity='0.06'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 320px 320px;
+  image-rendering: crisp-edges;
 }
 
 a {
@@ -60,8 +73,8 @@ a {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(8, 18, 24, 0.85);
-  backdrop-filter: blur(16px) saturate(1.2);
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(14px) saturate(1.1);
   border-bottom: 1px solid var(--line);
   box-shadow: var(--shadow-soft);
   z-index: 1000;
@@ -96,7 +109,7 @@ a {
   margin: 0;
   padding: 0;
   gap: 0.35rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: #000000;
   border: 1px solid var(--line);
   border-radius: 999px;
   padding: 0.2rem;
@@ -120,9 +133,11 @@ a {
 }
 
 .nav-link.active {
-  color: #0a1218;
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-  box-shadow: 0 4px 16px rgba(199, 93, 72, 0.35);
+  color: var(--ink);
+  background: #000000;
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.35),
+    0 0 0 2px rgba(52, 211, 153, 0.18);
 }
 
 .nav-link.active::after {
@@ -197,14 +212,16 @@ select {
 }
 
 .button-primary {
-  color: #0a1218;
-  border-color: transparent;
-  background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-  box-shadow: 0 12px 32px rgba(199, 93, 72, 0.32);
+  color: var(--ink);
+  border-color: rgba(238, 242, 255, 0.14);
+  background: #000000;
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.26),
+    0 12px 32px rgba(0, 0, 0, 0.4);
 }
 
 .button-secondary {
-  background: rgba(255, 255, 255, 0.06);
+  background: #000000;
   color: var(--ink);
   border-color: var(--line);
 }
@@ -248,6 +265,54 @@ select {
   flex-wrap: wrap;
   gap: 0.8rem;
   margin-top: 1.8rem;
+}
+
+.gofundme-card {
+  margin-top: 1.6rem;
+  padding: 1.15rem 1.15rem 1.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.85);
+  box-shadow: var(--shadow-soft);
+}
+
+.gofundme-card-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.gofundme-eyebrow {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.gofundme-title {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.gofundme-copy {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.gofundme-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
 }
 
 .product-card,

@@ -28,12 +28,12 @@
       content="Explore Skevia Studios, Veks AI, Zephra, Vocari, Luma, and Perea."
     />
     <meta name="twitter:image" content="https://skevia.net/company_logo.png" />
-    <meta name="theme-color" content="#070a0f" />
+    <meta name="theme-color" content="#0c0a10" />
     <title>Skevia | Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -42,29 +42,40 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav class="main-nav">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="main-nav" data-nav aria-label="Primary">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">Skevia</a>
         <ul class="nav-tabs">
-          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li>
+            <a href="index.html" class="nav-link" aria-current="page">Home</a>
+          </li>
           <li><a href="products.html" class="nav-link">Products</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <main id="top">
+    <main id="main-content" tabindex="-1">
       <section class="hero reveal">
         <div class="hero-copy">
           <p class="eyebrow">Clear tools. Memorable identity.</p>
-          <h1>Stop struggling, start creating.</h1>
+          <h1>
+            <span class="hero-title-line">Stop struggling,</span>
+            <span class="hero-title-line">start creating.</span>
+          </h1>
           <p class="hero-lead">
             Skevia Studios, Veks AI, Zephra, Vocari, Luma, and Perea—a compact
             family of projects designed to feel calm, legible, and genuinely
             useful from the first minute.
           </p>
 
-          <section class="gofundme-card" aria-label="Support Skevia on GoFundMe">
+          <div class="hero-actions">
+            <a href="products.html" class="button button-secondary">Explore products</a>
+            <a href="contact.html" class="button button-secondary">Get in touch</a>
+          </div>
+
+          <aside class="gofundme-card" aria-label="Support Skevia on GoFundMe">
             <div class="gofundme-card-top">
               <p class="gofundme-eyebrow">Support</p>
               <p class="gofundme-title">Help launch Skevia</p>
@@ -80,10 +91,11 @@
                 href="https://www.gofundme.com/f/support-Skevia"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Open Skevia fundraiser on GoFundMe (opens in new tab)"
                 >Open GoFundMe</a
               >
             </div>
-          </section>
+          </aside>
         </div>
 
         <div class="hero-mark reveal" aria-hidden="true">
@@ -102,8 +114,10 @@
               <div class="hero-tank">
                 <img
                   class="hero-tank-image"
-                  src="Fish Tank.jpg"
+                  src="Fish%20Tank.jpg"
                   alt=""
+                  decoding="async"
+                  fetchpriority="high"
                 />
                 <div class="tank-caustics-layer"></div>
                 <div class="tank-light-sweep"></div>
@@ -128,7 +142,8 @@
                 <img
                   class="hero-logo"
                   src="company_logo-cutout.png"
-                  alt="Axolotl logo"
+                  alt=""
+                  decoding="async"
                 />
               </div>
             </div>
@@ -138,6 +153,46 @@
           </div>
         </div>
       </section>
+
+      <section class="section section--tight reveal" aria-labelledby="values-heading">
+        <div class="section-heading">
+          <p class="eyebrow">How we build</p>
+          <h2 id="values-heading">Local first, human first</h2>
+          <p>
+            Skevia is a small studio betting on software that respects your
+            machine, your attention, and your time—without dumbing things down.
+          </p>
+        </div>
+        <ul class="value-grid">
+          <li class="value-item">
+            <strong>Privacy by architecture</strong>
+            <span
+              >Sensitive work stays on your hardware where it belongs—starting
+              with Zephra’s fully local intelligence.</span
+            >
+            <a href="products.html#product-zephra" class="value-item-link">Zephra on the products page</a>
+          </li>
+          <li class="value-item">
+            <strong>Clarity over jargon</strong>
+            <span
+              >Vocari meets panic with plain language and next steps, because
+              “error codes” shouldn’t be a literacy test.</span
+            >
+            <a href="products.html#product-vocari" class="value-item-link">Vocari on the products page</a>
+          </li>
+          <li class="value-item">
+            <strong>Interfaces that get out of the way</strong>
+            <span
+              >Luma trims noise from the tools you live in so the screen feels
+              lighter by default, not after a dozen settings panels.</span
+            >
+            <a href="products.html#product-luma" class="value-item-link">Luma on the products page</a>
+          </li>
+        </ul>
+        <p class="section-cta">
+          <a href="products.html" class="button button-primary">See the full lineup</a>
+        </p>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -145,8 +200,37 @@
         <p class="footer-title">Skevia</p>
         <p>Calm software with a strong point of view.</p>
       </div>
-      <p class="footer-copy">&copy; <span data-year></span> Skevia</p>
+      <ul class="footer-nav" aria-label="Site">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a
+            href="https://www.gofundme.com/f/support-Skevia"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Skevia on GoFundMe (opens in new tab)"
+            >GoFundMe</a
+          >
+        </li>
+      </ul>
+      <div class="footer-meta">
+        <p class="footer-copy">&copy; <span data-year></span> Skevia</p>
+      </div>
     </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Skevia",
+        "url": "https://skevia.net/",
+        "logo": "https://skevia.net/company_logo.png",
+        "email": "SkeviaSoftware@gmail.com",
+        "description": "Skevia builds calm software including Studios, Veks AI, Zephra, Vocari, Luma, and Perea.",
+        "sameAs": ["https://www.gofundme.com/f/support-Skevia"]
+      }
+    </script>
 
     <script src="script.js"></script>
   </body>

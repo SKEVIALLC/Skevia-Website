@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skevia.net/sitemap.xml

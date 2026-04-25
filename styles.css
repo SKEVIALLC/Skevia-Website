@@ -641,6 +641,31 @@ select {
   container-name: hero-copy;
 }
 
+/* Home hero without the tank: center the copy block */
+body:not(.page-products):not(.page-contact) .hero {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+}
+
+body:not(.page-products):not(.page-contact) .hero-copy {
+  width: min(100%, 46rem);
+  max-width: 46rem;
+  padding-inline: var(--hero-copy-pad-inline);
+}
+
+body:not(.page-products):not(.page-contact) .hero-copy::before {
+  content: none;
+}
+
+body:not(.page-products):not(.page-contact) .hero-actions {
+  justify-content: center;
+}
+
+body:not(.page-products):not(.page-contact) .gofundme-card {
+  margin-inline: auto;
+}
+
 @media (min-width: 1081px) {
   .hero-copy {
     max-width: none;

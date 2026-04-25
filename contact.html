@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact Skevia for partnerships, press, or questions about Skevia Studios, Veks AI, and more."
+      content="Contact Skevia for partnerships, press, or questions about Studios, Veks AI, Zephra, Vocari, Luma, and Perea."
     />
-    <meta name="theme-color" content="#0f2a34" />
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://skevia.net/contact.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Skevia" />
+    <meta property="og:title" content="Skevia | Contact" />
+    <meta
+      property="og:description"
+      content="Contact Skevia about Studios, Veks AI, Zephra, Vocari, Luma, and Perea."
+    />
+    <meta property="og:url" content="https://skevia.net/contact.html" />
+    <meta property="og:image" content="https://skevia.net/company_logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Skevia | Contact" />
+    <meta
+      name="twitter:description"
+      content="Contact Skevia about Studios, Veks AI, Zephra, Vocari, Luma, and Perea."
+    />
+    <meta name="twitter:image" content="https://skevia.net/company_logo.png" />
+    <meta name="theme-color" content="#0c0a10" />
     <title>Skevia | Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,66 +36,182 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.svg?v=2026-04-24b" type="image/svg+xml" />
+    <link rel="alternate icon" href="company-logo-cutout.png" type="image/png" />
+    <link rel="apple-touch-icon" href="company-logo-cutout.png" />
+    <link rel="stylesheet" href="styles.css?v=2026-04-24a" />
   </head>
-  <body>
-    <nav class="main-nav">
+  <body class="page-contact">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="main-nav" data-nav aria-label="Primary">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">Skevia</a>
         <ul class="nav-tabs">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="products.html" class="nav-link">Products</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li>
+            <a href="contact.html" class="nav-link" aria-current="page">Contact</a>
+          </li>
         </ul>
       </div>
     </nav>
 
-    <main id="top">
+    <main id="main-content" tabindex="-1">
       <section class="section reveal" id="contact">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2>Let’s start a conversation.</h2>
-          <p>
-            For partnerships, press, or anything product-related, email is the
-            fastest way to reach us.
-          </p>
-        </div>
+        <div class="contact-layout">
+          <div class="contact-layout-main">
+            <div class="contact-intro">
+              <p class="eyebrow">Contact</p>
+              <h1>Let’s start a conversation.</h1>
+              <p class="contact-lead">
+                Whether you’re exploring a partnership, covering Skevia in the
+                press, or asking about Studios, Veks AI, Zephra, Vocari, Luma, or
+                Perea, reach out by email — we read every note.
+              </p>
+            </div>
 
-        <div class="product-grid">
-          <article class="product-card">
-            <h3>Direct line</h3>
-            <p>General inquiries and business development.</p>
-            <p>
-              <a class="button button-primary" href="mailto:SkeviaSoftware@gmail.com"
-                >SkeviaSoftware@gmail.com</a
-              >
-            </p>
-          </article>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <h2>Direct line</h2>
+                <p>
+                  For general inquiries and business development, email is the
+                  fastest way to reach us.
+                </p>
+                <a
+                  class="contact-email"
+                  href="mailto:SkeviaSoftware@gmail.com"
+                  >SkeviaSoftware@gmail.com</a
+                >
+                <div class="contact-actions">
+                  <button
+                    type="button"
+                    class="button button-quiet"
+                    data-copy-email="SkeviaSoftware@gmail.com"
+                    data-copy-feedback="contact-copy-feedback"
+                    aria-label="Copy email address to clipboard"
+                  >
+                    Copy address
+                  </button>
+                </div>
+                <p
+                  id="contact-copy-feedback"
+                  class="contact-hint"
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                ></p>
+              </div>
+              <div class="contact-card contact-card-muted">
+                <h2>Response time</h2>
+                <p>
+                  We typically reply within two business days. If your note is
+                  urgent, please say so in the subject line.
+                </p>
+                <p>
+                  Clear subjects help us triage: for example
+                  <strong>Partnership:</strong>, <strong>Press:</strong>, or
+                  <strong>Product:</strong> plus the name (Zephra, Vocari, Luma,
+                  and so on).
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <article class="product-card">
-            <h3>Suggested subjects</h3>
-            <p>
-              Try <strong>Partnership</strong>, <strong>Press</strong>, or
-              <strong>Product</strong> (plus the name).
-            </p>
-            <p>
-              <a
-                class="button button-secondary"
-                href="mailto:SkeviaSoftware@gmail.com?subject=Partnership%20inquiry"
-                >Partnership inquiry</a
-              >
-            </p>
-          </article>
+          <aside class="contact-aside" aria-label="More ways to connect">
+            <div class="contact-aside-card">
+              <h2>On the site</h2>
+              <p>
+                Skim the lineup, then come back here with a specific product or
+                idea in mind—we love detail.
+              </p>
+              <ul class="contact-aside-links">
+                <li><a href="products.html">Product family</a></li>
+                <li><a href="index.html#values-heading">How we build</a></li>
+                <li>
+                  <a
+                    href="https://www.gofundme.com/f/support-Skevia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Support Skevia on GoFundMe (opens in new tab)"
+                    >Back the fundraiser</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="contact-aside-card">
+              <h2>Start an email</h2>
+              <p>Pick a lane—we’ll see the subject and route it faster.</p>
+              <ul class="contact-aside-mail">
+                <li>
+                  <a
+                    href="mailto:SkeviaSoftware@gmail.com?subject=Partnership%20inquiry"
+                    >Partnership inquiry</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:SkeviaSoftware@gmail.com?subject=Press%20%2F%20media"
+                    >Press / media</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:SkeviaSoftware@gmail.com?subject=Product%20feedback"
+                    >Product feedback</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:SkeviaSoftware@gmail.com?subject=Student%20or%20local%20programs"
+                    >Student or local programs</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </aside>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Skevia</p>
-      <p>Calm software with a strong point of view.</p>
-      <p>&copy; <span data-year></span></p>
+      <div class="footer-brand">
+        <p class="footer-title">Skevia</p>
+        <p>Calm software with a strong point of view.</p>
+      </div>
+      <ul class="footer-nav" aria-label="Site">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li>
+          <a
+            href="https://www.gofundme.com/f/support-Skevia"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Skevia on GoFundMe (opens in new tab)"
+            >GoFundMe</a
+          >
+        </li>
+      </ul>
+      <div class="footer-meta">
+        <p class="footer-copy">&copy; <span data-year></span> Skevia</p>
+      </div>
     </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Skevia",
+        "url": "https://skevia.net/contact.html",
+        "description": "Contact Skevia for partnerships, press, or product questions.",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Skevia",
+          "email": "SkeviaSoftware@gmail.com",
+          "url": "https://skevia.net/"
+        }
+      }
+    </script>
 
     <script src="script.js"></script>
   </body>

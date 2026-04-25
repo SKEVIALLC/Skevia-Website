@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Skevia is building a calm, clear software family with a stronger editorial point of view."
+      content="Skevia products: Studios, Veks AI, Zephra, Vocari, Luma, Perea — a calm software family."
     />
-    <meta name="theme-color" content="#0f2a34" />
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+    <link rel="canonical" href="https://skevia.net/products.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Skevia" />
+    <meta property="og:title" content="Skevia | Products" />
+    <meta
+      property="og:description"
+      content="Explore Skevia Studios, Veks AI, Zephra, Vocari, Luma, and Perea."
+    />
+    <meta property="og:url" content="https://skevia.net/products.html" />
+    <meta property="og:image" content="https://skevia.net/company_logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Skevia | Products" />
+    <meta
+      name="twitter:description"
+      content="Explore Skevia Studios, Veks AI, Zephra, Vocari, Luma, and Perea."
+    />
+    <meta name="twitter:image" content="https://skevia.net/company_logo.png" />
+    <meta name="theme-color" content="#0c0a10" />
     <title>Skevia | Products</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,71 +36,193 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.svg?v=2026-04-24b" type="image/svg+xml" />
+    <link rel="alternate icon" href="company-logo-cutout.png" type="image/png" />
+    <link rel="apple-touch-icon" href="company-logo-cutout.png" />
+    <link rel="stylesheet" href="styles.css?v=2026-04-24a" />
   </head>
-  <body>
-    <nav class="main-nav">
+  <body class="page-products">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav class="main-nav" data-nav aria-label="Primary">
       <div class="nav-container">
         <a href="index.html" class="nav-logo">Skevia</a>
         <ul class="nav-tabs">
           <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="products.html" class="nav-link active">Products</a></li>
+          <li>
+            <a href="products.html" class="nav-link" aria-current="page">Products</a>
+          </li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </div>
     </nav>
 
-    <main id="top">
+    <main id="main-content" tabindex="-1">
       <section class="section reveal" id="products">
         <div class="section-heading">
           <p class="eyebrow">Product family</p>
-          <h2>In the Works</h2>
+          <h2>In the works</h2>
           <p>
-            All our products are currently in development. We're building a calm, clear software family with a stronger editorial point of view.
+            Studios, Veks AI, Zephra, Vocari, Luma, and Perea—local-first
+            intelligence, clearer errors, and calmer interfaces, all written to
+            feel legible and intentional.
           </p>
         </div>
 
         <div class="product-grid">
-          <article class="product-card">
+          <article class="product-card" id="product-studios" data-index="01">
             <h3>Skevia Studios</h3>
             <p>
-              Focused digital spaces for creative work, planning, and
-              day-to-day momentum.
+              Focused digital spaces for creative work, planning, and everyday
+              momentum. Built to feel calm and clear instead of like another busy
+              dashboard.
             </p>
+            <a
+              class="product-card-link"
+              href="mailto:SkeviaSoftware@gmail.com?subject=Question%20about%20Skevia%20Studios"
+              >Email about Studios</a
+            >
           </article>
 
-          <article class="product-card">
+          <article class="product-card" id="product-veks" data-index="02">
             <h3>Veks AI</h3>
             <p>
-              An AI layer meant to feel useful, readable, and close to real
-              workflows.
+              An AI layer that stays close to real workflows: useful, readable,
+              and easy to follow. Meant to help without turning every task into a
+              chat window.
             </p>
+            <a
+              class="product-card-link"
+              href="mailto:SkeviaSoftware@gmail.com?subject=Question%20about%20Veks%20AI"
+              >Email about Veks AI</a
+            >
           </article>
 
-          <article class="product-card">
-            <h3>Skevia Vault</h3>
+          <article class="product-card" id="product-zephra" data-index="03">
+            <h3>Zephra</h3>
             <p>
-              A cleaner privacy and performance layer for the computer you
-              already use.
+              Zephra keeps your files organized and watches for trouble on your
+              machine—fully local, no cloud required. It runs Llama 3.2 (1B) on
+              your own hardware so nothing sensitive leaves the device.
             </p>
+            <a
+              class="product-card-link"
+              href="mailto:SkeviaSoftware@gmail.com?subject=Question%20about%20Zephra"
+              >Email about Zephra</a
+            >
           </article>
 
-          <article class="product-card">
-            <h3>Nexus Shop</h3>
+          <article class="product-card" id="product-vocari" data-index="04">
+            <h3>Vocari</h3>
             <p>
-              The centralized marketplace and expansion hub for the entire Skevia ecosystem. Purchase individual mods, AI plugins, and workspace templates.
+              Vocari watches for system errors in the background and swaps
+              technical jargon for plain English with simple next steps. It turns
+              “what just happened?” into something you can actually fix.
             </p>
+            <a
+              class="product-card-link"
+              href="mailto:SkeviaSoftware@gmail.com?subject=Question%20about%20Vocari"
+              >Email about Vocari</a
+            >
           </article>
+
+          <article class="product-card" id="product-luma" data-index="05">
+            <h3>Luma</h3>
+            <p>
+              Luma learns what you actually use in Word, Excel, Salesforce, and
+              similar apps, then hides the rest of the UI noise. The same idea
+              extends to the taskbar and Start menu so everyday computing feels
+              lighter.
+            </p>
+            <a
+              class="product-card-link"
+              href="mailto:SkeviaSoftware@gmail.com?subject=Question%20about%20Luma"
+              >Email about Luma</a
+            >
+          </article>
+
+          <article class="product-card" id="product-perea" data-index="06">
+            <h3>Perea</h3>
+            <p>
+              Perea is a new operating system meant to sit alongside Zephra,
+              Vocari, Luma, and the rest of the Skevia line—security and
+              performance as foundations, not afterthoughts. Built in assembly, C,
+              and Rust so the stack stays explicit and under control where it
+              counts.
+            </p>
+            <a
+              class="product-card-link"
+              href="mailto:SkeviaSoftware@gmail.com?subject=Question%20about%20Perea"
+              >Email about Perea</a
+            >
+          </article>
+        </div>
+
+        <div class="section-outro reveal">
+          <p class="eyebrow">Next step</p>
+          <h3 class="section-outro-title">Build something with us</h3>
+          <p class="section-outro-lead">
+            Questions about a product, a partnership, or the roadmap? Say hello—we
+            read every message.
+          </p>
+          <div class="section-outro-actions">
+            <a href="contact.html" class="button button-primary">Contact</a>
+            <a
+              class="button button-secondary"
+              href="https://www.gofundme.com/f/support-Skevia"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Support Skevia on GoFundMe (opens in new tab)"
+              >Support on GoFundMe</a
+            >
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>Skevia</p>
-      <p>Calm software with a strong point of view.</p>
-      <p>&copy; <span data-year></span></p>
+      <div class="footer-brand">
+        <p class="footer-title">Skevia</p>
+        <p>Calm software with a strong point of view.</p>
+      </div>
+      <ul class="footer-nav" aria-label="Site">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" aria-current="page">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li>
+          <a
+            href="https://www.gofundme.com/f/support-Skevia"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Skevia on GoFundMe (opens in new tab)"
+            >GoFundMe</a
+          >
+        </li>
+      </ul>
+      <div class="footer-meta">
+        <p class="footer-copy">&copy; <span data-year></span> Skevia</p>
+      </div>
     </footer>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Skevia Products",
+        "url": "https://skevia.net/products.html",
+        "description": "Studios, Veks AI, Zephra, Vocari, Luma, and Perea — the Skevia product family.",
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Skevia Studios" },
+            { "@type": "ListItem", "position": 2, "name": "Veks AI" },
+            { "@type": "ListItem", "position": 3, "name": "Zephra" },
+            { "@type": "ListItem", "position": 4, "name": "Vocari" },
+            { "@type": "ListItem", "position": 5, "name": "Luma" },
+            { "@type": "ListItem", "position": 6, "name": "Perea" }
+          ]
+        }
+      }
+    </script>
 
     <script src="script.js"></script>
   </body>

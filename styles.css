@@ -646,12 +646,18 @@ body:not(.page-products):not(.page-contact) .hero {
   grid-template-columns: 1fr;
   justify-items: center;
   text-align: center;
+  align-items: center;
+  padding-top: clamp(3rem, 8vh, 5.5rem);
+  padding-bottom: clamp(3rem, 10vh, 6.5rem);
+  min-height: calc(100svh - var(--nav-h));
 }
 
 body:not(.page-products):not(.page-contact) .hero-copy {
   width: min(100%, 46rem);
   max-width: 46rem;
   padding-inline: var(--hero-copy-pad-inline);
+  margin-inline: auto;
+  text-align: center;
 }
 
 body:not(.page-products):not(.page-contact) .hero-copy::before {

@@ -1,22 +1,10 @@
 /* Skevia — Chromatic Almanac (redesign) */
 
-@property --aurora-a {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 232deg;
-}
-
-@property --aurora-b {
-  syntax: "<angle>";
-  inherits: false;
-  initial-value: 308deg;
-}
-
 :root {
   /* Prototype theme tokens (palette + typography) */
   --void: #0d2028; /* deep teal */
-  --surface: rgba(14, 40, 49, 0.78);
-  --surface-2: rgba(19, 52, 62, 0.55);
+  --surface: rgba(14, 40, 49, 0.92);
+  --surface-2: rgba(19, 52, 62, 0.8);
   --ink: #eef6f3;
   --ink-dim: rgba(184, 208, 203, 0.86);
   --coral: #ff8e72; /* warm accent */
@@ -49,7 +37,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Avoid scroll-linked compositor work; native smoothness fights wheel/trackpad. */
+  scroll-behavior: auto;
   scroll-padding-top: calc(var(--nav-h) + 1rem);
 }
 
@@ -126,9 +115,10 @@ body::before {
   inset: -20%;
   pointer-events: none;
   z-index: -2;
+  /* Static gradients (no animation): animated blur + conic was heavy during scroll. */
   background:
     conic-gradient(
-      from var(--aurora-a) at 35% 35%,
+      from 232deg at 35% 35%,
       rgba(255, 92, 77, 0.09),
       transparent 28%,
       rgba(46, 230, 190, 0.07),
@@ -138,15 +128,15 @@ body::before {
       rgba(255, 92, 77, 0.06)
     ),
     conic-gradient(
-      from var(--aurora-b) at 70% 65%,
+      from 308deg at 70% 65%,
       rgba(232, 197, 71, 0.05),
       transparent 35%,
       rgba(46, 230, 190, 0.06),
       transparent 70%
     );
-  filter: blur(52px) saturate(1.15);
+  filter: blur(28px) saturate(1.12);
   opacity: 0.85;
-  animation: aurora-rotate 28s ease-in-out infinite alternate;
+  transform: translateZ(0);
 }
 
 body::after {
@@ -159,20 +149,6 @@ body::after {
   background-image: url("bg-noise.svg");
   background-size: 240px 240px;
   mix-blend-mode: overlay;
-}
-
-@keyframes aurora-rotate {
-  0% {
-    --aurora-a: 220deg;
-    --aurora-b: 295deg;
-    transform: scale(1) translate3d(0, 0, 0);
-  }
-
-  100% {
-    --aurora-a: 300deg;
-    --aurora-b: 28deg;
-    transform: scale(1.06) translate3d(-2%, 1%, 0);
-  }
 }
 
 a {
@@ -239,6 +215,8 @@ select {
   background: transparent;
   transition: padding 0.25s ease;
   isolation: isolate;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .main-nav[data-scrolled="true"] {
@@ -259,10 +237,9 @@ select {
   border: 1px solid var(--line);
   background: linear-gradient(
     135deg,
-    rgba(12, 10, 18, 0.92) 0%,
-    rgba(18, 14, 28, 0.78) 100%
+    rgba(12, 10, 18, 0.97) 0%,
+    rgba(18, 14, 28, 0.9) 100%
   );
-  backdrop-filter: blur(18px) saturate(1.2);
   box-shadow:
     var(--shadow-soft),
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
@@ -881,9 +858,10 @@ body:not(.page-products):not(.page-contact) .gofundme-card {
     radial-gradient(circle at 30% 30%, rgba(255, 92, 77, 0.2), transparent 35%),
     radial-gradient(circle at 72% 38%, rgba(46, 230, 190, 0.16), transparent 38%),
     radial-gradient(circle at 48% 72%, rgba(179, 140, 255, 0.14), transparent 42%);
-  filter: blur(48px);
+  filter: blur(32px);
   opacity: 0.9;
   pointer-events: none;
+  transform: translateZ(0);
 }
 
 .tank-showcase {
@@ -1439,7 +1417,6 @@ body:not(.page-products):not(.page-contact) .gofundme-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   background: var(--surface);
-  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-soft);
   transition:
     transform 0.22s ease,
@@ -1498,8 +1475,16 @@ body:not(.page-products):not(.page-contact) .gofundme-card {
     var(--surface);
 }
 
+.product-card:nth-child(7) {
+  grid-column: span 6;
+  min-height: 14rem;
+  background:
+    linear-gradient(168deg, rgba(110, 168, 220, 0.11) 0%, transparent 40%),
+    var(--surface);
+}
+
 .product-card:hover {
-  transform: translateY(-3px) rotateX(0.5deg);
+  transform: translateY(-3px);
   border-color: var(--line-strong);
   box-shadow: var(--shadow);
 }
@@ -1665,7 +1650,6 @@ body:not(.page-products):not(.page-contact) .gofundme-card {
   background:
     linear-gradient(155deg, rgba(46, 230, 190, 0.1) 0%, transparent 42%),
     var(--surface);
-  backdrop-filter: blur(14px);
   box-shadow: var(--shadow-soft);
   transition:
     transform 0.2s ease,
@@ -2194,10 +2178,6 @@ body:not(.page-products):not(.page-contact) .gofundme-card {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-  }
-
-  body::before {
-    animation: none !important;
   }
 
   /* Hardware chrome: no motion; tank body stays fixed (no float). */

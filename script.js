@@ -14,9 +14,14 @@ if (skipLink && mainContent) {
 
 if (nav) {
   let scheduled = false;
+  const scrollThreshold = 14;
+
   const syncNav = () => {
-    nav.dataset.scrolled = window.scrollY > 14 ? "true" : "false";
     scheduled = false;
+    const next = window.scrollY > scrollThreshold ? "true" : "false";
+    if (nav.dataset.scrolled !== next) {
+      nav.dataset.scrolled = next;
+    }
   };
 
   const onScroll = () => {
